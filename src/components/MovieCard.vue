@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import type { Movie } from '@/Movie';
-  import { GENRES_MAP } from '@/GenresMap';
+  import type { Movie } from '@/interfaces/Movie';
+  import { GENRES_MAP } from '@/services/GenresMap';
 
   const props = defineProps<{
     movie: Movie,
@@ -36,5 +36,47 @@
 </template>
 
 <style scoped>
-
+  .movie-card {
+    display: flex;
+    gap: var(--gap-small);
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  .movie-cover {
+    flex: 0 0 50%;
+  }
+  .movie-cover-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.31);
+    @media only screen and (max-width: 768px) {
+      width: 175px;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+  .movie-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .movie-description {
+    margin-bottom: var(--controls-margin);
+  }
+  .movie-badges {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--controls-margin);
+  }
+  .movie-badge {
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, .2);
+  }
+  .movie-trailer-btn {
+    margin-top: auto;
+  }
 </style>

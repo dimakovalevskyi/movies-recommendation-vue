@@ -1,5 +1,5 @@
-import type { Filters } from '@/Filters';
-import type { Movie } from '@/Movie';
+import type { Filters } from '@/interfaces/Filters';
+import type { Movie } from '@/interfaces/Movie';
 
 export class RecommendationsService {
   private cachedDB = null;

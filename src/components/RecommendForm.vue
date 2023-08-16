@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { Filters } from '@/Filters.ts';
+import { Filters } from '@/interfaces/Filters.ts';
 import type { Ref } from 'vue';
-import { GENRES_MAP } from '@/GenresMap';
+import { GENRES_MAP } from '@/services/GenresMap';
 
 const emit = defineEmits<{
   submit: [filters: Filters],
@@ -62,5 +62,25 @@ function submit() {
 </template>
 
 <style scoped>
-
+  .form-group {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-small);
+    &:not(:last-child) {
+      margin-bottom: var(--controls-margin);
+    }
+  }
+  label {
+    font-size: 20px;
+  }
+  .form-control {
+    border-radius: 5px;
+    flex: 1 1 auto;
+    height: 35px;
+    padding: 5px;
+    color: white;
+    border: none;
+    background: rgba(255,255,255, .2);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+  }
 </style>
