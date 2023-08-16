@@ -4,9 +4,11 @@ import MovieCard from '@/components/MovieCard.vue';
 import Loader from '@/components/Loader.vue';
 import Placeholder from '@/components/Placeholder.vue';
 
-import { Ref, ref } from 'vue';
+import type { Ref } from 'vue';
+import { ref } from 'vue';
 import type { Movie } from '@/interfaces/Movie';
 import { RecommendationsService } from '@/services/RecommendationsService';
+import type { Filters } from '@/interfaces/Filters';
 
 const recommendation: Ref<Movie|null> = ref(null);
 const pristine: Ref<boolean> = ref(true);
@@ -14,10 +16,10 @@ const loading: Ref<boolean> = ref(false);
 
 const service = new RecommendationsService('db.json');
 
-function onSubmit(filters) {
+function onSubmit(filters: Filters) {
   findMovie(filters);
 }
-function findMovie(filters) {
+function findMovie(filters: Filters) {
   recommendation.value = null;
   pristine.value = false;
   loading.value = true;

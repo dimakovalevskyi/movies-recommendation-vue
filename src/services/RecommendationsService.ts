@@ -2,8 +2,7 @@ import type { Filters } from '@/interfaces/Filters';
 import type { Movie } from '@/interfaces/Movie';
 
 export class RecommendationsService {
-  private cachedDB = null;
-  private apiUrl = null;
+  private cachedDB?: Movie[];
 
   constructor(private apiUrl: string = 'db.json') {
   }

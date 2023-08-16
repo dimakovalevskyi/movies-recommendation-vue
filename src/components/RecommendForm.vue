@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { Filters } from '@/interfaces/Filters.ts';
+import type { Filters } from '@/interfaces/Filters';
 import type { Ref } from 'vue';
 import { GENRES_MAP } from '@/services/GenresMap';
 
